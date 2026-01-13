@@ -33,4 +33,11 @@ class DictionaryService {
     // Note: older unsplash source urls are deprecated, but let's try a direct keyword search or return null to fall back to colors
     return 'https://loremflickr.com/320/240/$word';
   }
+
+  // Fallback words for quiz generation when history is empty
+  static const List<String> commonWords = [
+    'serendipity', 'ephemeral', 'oblivion', 'longevity', 'harmony', 
+    'adventure', 'resilience', 'solitude', 'nostalgia', 'wisdom',
+    'curiosity', 'freedom', 'gratitude', 'happiness', 'imagination'
+  ];
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ledger/providers/dictionary_provider.dart';
+import 'package:ledger/screens/quiz_screen.dart';
 import 'package:ledger/screens/word_detail_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -155,6 +156,72 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               
+              const SizedBox(height: 32),
+
+              // Daily Quiz Banner
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const QuizScreen()),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.deepPurple.withValues(alpha: 0.3),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                       Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Text('🧠', style: TextStyle(fontSize: 24)),
+                      ),
+                      const SizedBox(width: 16),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                           Text(
+                            'Daily Quiz',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'Test your knowledge!',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 16),
+                    ],
+                  ),
+                ),
+              ),
+
               const SizedBox(height: 32),
               
               // Your card sets
