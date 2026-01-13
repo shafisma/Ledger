@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:ledger/models/word_model.dart';
 import 'package:ledger/providers/dictionary_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -70,7 +69,7 @@ class WordDetailScreen extends StatelessWidget {
                         image: CachedNetworkImageProvider(word.imageUrl!),
                         fit: BoxFit.cover,
                         colorFilter: ColorFilter.mode(
-                          Colors.white.withOpacity(0.85), 
+                          Colors.white.withValues(alpha: 0.85), 
                           BlendMode.lighten,
                         ),
                       ) 
